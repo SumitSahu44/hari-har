@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-cream: #FFF9E9;
+  --bg-soft-cream: #F8F4E8;
+  --brand-green: #075B3A;
+  --dark-green: #06452D;
+  --fresh-green: #188A4A;
+  --brand-yellow: #FFC928;
+  --warm-yellow: #F5B91E;
+  --dark-text: #123B2A;
+  --muted-text: #68736C;
+
+  --font-plus-jakarta: 'Plus Jakarta Sans', sans-serif;
+  --font-caveat: 'Caveat', cursive;
+}
+
+body {
+  background-color: var(--bg-cream);
+  color: var(--dark-text);
+  font-family: var(--font-plus-jakarta);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-handwriting {
+  font-family: var(--font-caveat);
+}
+
+/* Custom Utilities for Premium Visual Styling */
+.brush-stroke-yellow {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.brush-stroke-yellow::after {
+  content: '';
+  position: absolute;
+  bottom: 0.15em;
+  left: -0.1em;
+  right: -0.1em;
+  height: 0.35em;
+  background-color: var(--brand-yellow);
+  z-index: -1;
+  border-radius: 4px;
+  transform: rotate(-1.5deg);
+}
+
+.bg-pattern-cream {
+  background-color: #FFF9E9;
+  background-image: radial-gradient(#075B3A 0.4px, transparent 0.4px);
+  background-size: 24px 24px;
+  background-opacity: 0.05;
+}
+
+.bg-deep-green {
+  background-color: #075B3A;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFF9E9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #075B3A;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #06452D;
+}
