@@ -2,12 +2,33 @@ import React from "react";
 import Image from "next/image";
 import { BRAND_IMAGES } from "@/data/images";
 
-export function MascotLogo({ size = "md", className = "" }: { size?: "sm" | "md" | "lg"; className?: string }) {
+export function MascotLogo({
+  size = "md",
+  variant = "default",
+  className = "",
+}: {
+  size?: "sm" | "md" | "lg";
+  variant?: "default" | "light";
+  className?: string;
+}) {
   const badgeDimensions = {
     sm: "w-9 h-9 md:w-10 md:h-10",
     md: "w-11 h-11 md:w-13 md:h-13",
     lg: "w-14 h-14 md:w-16 md:h-16",
   }[size];
+
+  const textColors = {
+    default: {
+      sub1: "text-[#075B3A]",
+      main: "text-[#075B3A]",
+      sub2: "text-[#075B3A]",
+    },
+    light: {
+      sub1: "text-[#FFC928]",
+      main: "text-white",
+      sub2: "text-[#FFC928]",
+    },
+  }[variant];
 
   return (
     <div className={`flex items-center gap-3 ${className}`}>
@@ -27,13 +48,13 @@ export function MascotLogo({ size = "md", className = "" }: { size?: "sm" | "md"
 
       {/* Brand Text */}
       <div className="flex flex-col leading-tight">
-        <span className="text-[10px] md:text-[11px] font-bold tracking-wider text-[#075B3A] uppercase font-sans">
+        <span className={`text-[10px] md:text-[11px] font-bold tracking-wider uppercase font-sans ${textColors.sub1}`}>
           Abhideep
         </span>
-        <span className="text-xl md:text-2xl font-black text-[#075B3A] tracking-tight leading-none font-sans flex items-center gap-1">
+        <span className={`text-xl md:text-2xl font-black tracking-tight leading-none font-sans flex items-center gap-1 ${textColors.main}`}>
           Harihar
         </span>
-        <span className="text-[10px] md:text-[11px] font-extrabold tracking-widest text-[#F5B91E] uppercase font-sans -mt-0.5">
+        <span className={`text-[10px] md:text-[11px] font-extrabold tracking-widest uppercase font-sans -mt-0.5 ${textColors.sub2}`}>
           SANDWICH
         </span>
       </div>

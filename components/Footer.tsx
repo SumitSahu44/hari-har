@@ -16,7 +16,7 @@ export default function Footer() {
           {/* Col 1: Brand Info */}
           <div className="lg:col-span-2 flex flex-col items-start pr-0 lg:pr-6">
             <Link href="/" className="mb-4">
-              <MascotLogo size="lg" className="bg-white/10 p-2 rounded-2xl backdrop-blur-sm" />
+              <MascotLogo size="lg" variant="light" className="bg-white/10 p-2.5 rounded-2xl backdrop-blur-sm" />
             </Link>
             <p className="text-sm text-white/80 font-medium mb-6 leading-relaxed max-w-sm">
               Freshly grilled, loaded with real cheese & signature spices. Bringing authentic Bhopal sandwich culture across India.
@@ -81,7 +81,7 @@ export default function Footer() {
 
             {/* Social Icons */}
             <div className="pt-4 flex items-center gap-3">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#FFC928] hover:text-[#06452D] flex items-center justify-center transition-colors">
+              <a href="https://www.instagram.com/harihar_sandwich/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#FFC928] hover:text-[#06452D] flex items-center justify-center transition-colors">
                 <Instagram className="w-4 h-4" />
               </a>
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#FFC928] hover:text-[#06452D] flex items-center justify-center transition-colors">

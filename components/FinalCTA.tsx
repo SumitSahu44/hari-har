@@ -50,13 +50,13 @@ export default function FinalCTA({ onOpenOrder }: FinalCTAProps) {
             </div>
           </div>
 
-          {/* Appetizing Sandwich Thumbnail Graphic */}
-          <div className="relative w-64 h-48 sm:w-80 sm:h-56 rounded-2xl overflow-hidden shadow-xl border-4 border-white transform rotate-2 hover:rotate-0 transition-transform z-10 flex-shrink-0">
+          {/* Appetizing Sandwich Graphic - Clean floating PNG image */}
+          <div className="relative w-64 h-52 sm:w-96 sm:h-72 flex-shrink-0 z-10 transform hover:scale-105 transition-transform">
             <Image
               src={BRAND_IMAGES.heroSandwich}
               alt="Harihar Grilled Sandwich"
               fill
-              className="object-cover"
+              className="object-contain"
             />
           </div>
 

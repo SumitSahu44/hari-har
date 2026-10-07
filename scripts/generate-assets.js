@@ -106,45 +106,41 @@ const menuItems = [
 
 menuItems.forEach(item => {
   const svgContent = createFoodSvg(item.title, `Loaded & Fresh • ${item.price}`, '#075B3A', '#FFC928');
+  fs.writeFileSync(path.join(process.cwd(), `public/images/menu/${item.name}.svg`), svgContent);
   fs.writeFileSync(path.join(process.cwd(), `public/images/menu/${item.name}.jpg`), svgContent);
 });
 
 // Hero Sandwich
-fs.writeFileSync(
-  path.join(process.cwd(), 'public/images/hero/hero-sandwich.jpg'),
-  createFoodSvg("BHOPAL'S FAVOURITE", "100% Fresh • Grilled • Loaded", '#075B3A', '#FFC928')
-);
+const heroSvg = createFoodSvg("BHOPAL'S FAVOURITE", "100% Fresh • Grilled • Loaded", '#075B3A', '#FFC928');
+fs.writeFileSync(path.join(process.cwd(), 'public/images/hero/hero-sandwich.svg'), heroSvg);
+fs.writeFileSync(path.join(process.cwd(), 'public/images/hero/hero-sandwich.jpg'), heroSvg);
 
 // Signature Close Up
-fs.writeFileSync(
-  path.join(process.cwd(), 'public/images/hero/signature-close-up.jpg'),
-  createFoodSvg("SIGNATURE EXPERIENCE", "Layers of Freshness & Taste", '#06452D', '#FFC928')
-);
+const sigSvg = createFoodSvg("SIGNATURE EXPERIENCE", "Layers of Freshness & Taste", '#06452D', '#FFC928');
+fs.writeFileSync(path.join(process.cwd(), 'public/images/hero/signature-close-up.svg'), sigSvg);
+fs.writeFileSync(path.join(process.cwd(), 'public/images/hero/signature-close-up.jpg'), sigSvg);
 
 // Why Section
 const whyItems = ['fresh-ingredients', 'signature-taste', 'fast-service', 'franchise-ready'];
 whyItems.forEach(item => {
-  fs.writeFileSync(
-    path.join(process.cwd(), `public/images/why/${item}.jpg`),
-    createFoodSvg(item.replace('-', ' ').toUpperCase(), 'Harihar Quality', '#188A4A', '#FFC928')
-  );
+  const svg = createFoodSvg(item.replace('-', ' ').toUpperCase(), 'Harihar Quality', '#188A4A', '#FFC928');
+  fs.writeFileSync(path.join(process.cwd(), `public/images/why/${item}.svg`), svg);
+  fs.writeFileSync(path.join(process.cwd(), `public/images/why/${item}.jpg`), svg);
 });
 
 // Locations
 const locItems = ['mp-nagar', 'tt-nagar', 'kolar-road', 'indore'];
 locItems.forEach(item => {
-  fs.writeFileSync(
-    path.join(process.cwd(), `public/images/locations/${item}.jpg`),
-    createFoodSvg(item.replace('-', ' ').toUpperCase(), 'Visit Harihar Outlet', '#075B3A', '#FFC928')
-  );
+  const svg = createFoodSvg(item.replace('-', ' ').toUpperCase(), 'Visit Harihar Outlet', '#075B3A', '#FFC928');
+  fs.writeFileSync(path.join(process.cwd(), `public/images/locations/${item}.svg`), svg);
+  fs.writeFileSync(path.join(process.cwd(), `public/images/locations/${item}.jpg`), svg);
 });
 
 // Gallery
 for (let i = 1; i <= 5; i++) {
-  fs.writeFileSync(
-    path.join(process.cwd(), `public/images/gallery/gallery-${i}.jpg`),
-    createFoodSvg(`#HariharMoments ${i}`, 'Real Food. Real Happiness.', '#06452D', '#FFC928')
-  );
+  const svg = createFoodSvg(`#HariharMoments ${i}`, 'Real Food. Real Happiness.', '#06452D', '#FFC928');
+  fs.writeFileSync(path.join(process.cwd(), `public/images/gallery/gallery-${i}.svg`), svg);
+  fs.writeFileSync(path.join(process.cwd(), `public/images/gallery/gallery-${i}.jpg`), svg);
 }
 
 // Map SVG
@@ -193,6 +189,6 @@ const mapSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" wi
   </g>
 </svg>`;
 
-fs.writeFileSync(path.join(process.cwd(), 'public/images/locations/bhopal-map.svg'), mapSvg);
+fs.writeFileSync(path.join(process.cwd(), 'public/images/locations/bhopal-map.png'), mapSvg);
 
 console.log('Assets created successfully!');
